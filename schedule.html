@@ -13,7 +13,7 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e4620 0%, #2d5016 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -53,9 +53,10 @@
         
         .day {
             background: #f9f9f9;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #1e4620;
             border-radius: 8px;
             padding: 20px;
+            position: relative;
         }
         
         .day-name {
@@ -73,6 +74,8 @@
             background: white;
             border: 1px solid #e0e0e0;
             border-radius: 6px;
+            margin-left: 50px;
+            position: relative;
         }
         
         .lesson-block:last-child {
@@ -81,9 +84,13 @@
         
         .lesson-time {
             font-weight: bold;
-            color: #667eea;
+            color: #1e4620;
             font-size: 13px;
-            margin-bottom: 10px;
+            position: absolute;
+            left: -50px;
+            top: 14px;
+            width: 40px;
+            text-align: center;
         }
         
         .lesson {
@@ -111,14 +118,22 @@
         }
         
         .lesson-type {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 11px;
-            font-weight: bold;
-            margin-right: 6px;
+            display: inline;
+            background: none;
+            color: #666;
+            padding: 0;
+            border-radius: 0;
+            font-size: 14px;
+            font-weight: normal;
+            margin-right: 0;
+        }
+        
+        .lesson-type::before {
+            content: " (";
+        }
+        
+        .lesson-type::after {
+            content: ")";
         }
         
         .professor {
@@ -146,9 +161,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>📚 Розклад занять</h1>
+        <h1>Розклад занять</h1>
         <div class="time-key">
-            <strong>Час занять:</strong> 5 пара - 15:05 | 6 пара - 16:40 | 7 пара - 18:10
+            <strong>Номери пар:</strong> 5 — 15:05 | 6 — 16:40 | 7 — 18:10
         </div>
         
         <div class="schedule">
@@ -157,33 +172,30 @@
                 <div class="day-name">Понеділок</div>
                 
                 <div class="lesson-block">
-                    <div class="lesson-time">5 пара (15:05)</div>
+                    <div class="lesson-time">5</div>
                     <div class="lesson">
-                        <div class="lesson-name">Соціальне проектування</div>
+                        <div class="lesson-name">Соціальне проектування <span class="lesson-type">С</span> (15:05)</div>
                         <div class="lesson-info">
-                            <span class="lesson-type">С</span>
                             <span class="professor">Коваліско</span> • <span class="room">320</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="lesson-block">
-                    <div class="lesson-time">6 пара (16:40)</div>
+                    <div class="lesson-time">6</div>
                     <div class="lesson">
-                        <div class="lesson-name">Культурсоціологічний аналіз сучасного суспільства</div>
+                        <div class="lesson-name">Культурсоціологічний аналіз сучасного суспільства <span class="lesson-type">Л</span> (16:40)</div>
                         <div class="lesson-info">
-                            <span class="lesson-type">Л</span>
                             <span class="professor">Черниш</span> • <span class="room">320</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="lesson-block">
-                    <div class="lesson-time">7 пара (18:10)</div>
+                    <div class="lesson-time">7</div>
                     <div class="lesson">
-                        <div class="lesson-name">Соціальне проектування</div>
+                        <div class="lesson-name">Соціальне проектування <span class="lesson-type">Л</span> (18:10)</div>
                         <div class="lesson-info">
-                            <span class="lesson-type">Л</span>
                             <span class="professor">Коваліско</span> • <span class="room">320</span>
                         </div>
                     </div>
@@ -195,29 +207,26 @@
                 <div class="day-name">Вівторок</div>
                 
                 <div class="lesson-block">
-                    <div class="lesson-time">5 пара (15:05)</div>
+                    <div class="lesson-time">5</div>
                     <div class="lesson">
-                        <div class="lesson-name">Методологія стратифікаційного аналізу сучасного суспільства</div>
+                        <div class="lesson-name">Методологія стратифікаційного аналізу сучасного суспільства <span class="lesson-type">Л</span> (15:05)</div>
                         <div class="lesson-info">
-                            <span class="lesson-type">Л</span>
                             <span class="professor">Коваліско</span> • <span class="room">320</span>
                         </div>
                     </div>
                     <div class="lesson">
-                        <div class="lesson-name">Методологія стратифікаційного аналізу сучасного суспільства</div>
+                        <div class="lesson-name">Методологія стратифікаційного аналізу сучасного суспільства <span class="lesson-type">С</span> (15:05)</div>
                         <div class="lesson-info">
-                            <span class="lesson-type">С</span>
                             <span class="professor">Коваліско</span> • <span class="room">320</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="lesson-block">
-                    <div class="lesson-time">6 пара (16:40)</div>
+                    <div class="lesson-time">6</div>
                     <div class="lesson">
-                        <div class="lesson-name">Культурсоціологічний аналіз сучасного суспільства</div>
+                        <div class="lesson-name">Культурсоціологічний аналіз сучасного суспільства <span class="lesson-type">Л</span> (16:40)</div>
                         <div class="lesson-info">
-                            <span class="lesson-type">Л</span>
                             <span class="professor">Черниш</span> • <span class="room">320</span>
                         </div>
                     </div>
@@ -229,47 +238,42 @@
                 <div class="day-name">Середа</div>
                 
                 <div class="lesson-block">
-                    <div class="lesson-time">5 пара (15:05)</div>
+                    <div class="lesson-time">5</div>
                     <div class="lesson">
-                        <div class="lesson-name">Іноземна мова за фаховим спрямуванням</div>
+                        <div class="lesson-name">Іноземна мова за фаховим спрямуванням <span class="lesson-type">С</span> (15:05)</div>
                         <div class="lesson-info">
-                            <span class="lesson-type">С</span>
                             <span class="professor">Горностай</span> • <span class="room">83</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="lesson-block">
-                    <div class="lesson-time">6 пара (16:40)</div>
+                    <div class="lesson-time">6</div>
                     <div class="lesson">
-                        <div class="lesson-name">Аксіологія суспільних трансформацій</div>
+                        <div class="lesson-name">Аксіологія суспільних трансформацій <span class="lesson-type">Л</span> (16:40)</div>
                         <div class="lesson-info">
-                            <span class="lesson-type">Л</span>
                             <span class="professor">Пачковський</span> • <span class="room">320</span>
                         </div>
                     </div>
                     <div class="lesson">
-                        <div class="lesson-name">Соціологія безпеки</div>
+                        <div class="lesson-name">Соціологія безпеки <span class="lesson-type">Л</span> (16:40)</div>
                         <div class="lesson-info">
-                            <span class="lesson-type">Л</span>
                             <span class="professor">Лапан</span> • <span class="room">320</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="lesson-block">
-                    <div class="lesson-time">7 пара (18:10)</div>
+                    <div class="lesson-time">7</div>
                     <div class="lesson">
-                        <div class="lesson-name">Інституціональний аналіз сучасного суспільства</div>
+                        <div class="lesson-name">Інституціональний аналіз сучасного суспільства <span class="lesson-type">Л</span> (18:10)</div>
                         <div class="lesson-info">
-                            <span class="lesson-type">Л</span>
                             <span class="professor">Калиняк</span> • <span class="room">320</span>
                         </div>
                     </div>
                     <div class="lesson">
-                        <div class="lesson-name">Інституціональний аналіз сучасного суспільства</div>
+                        <div class="lesson-name">Інституціональний аналіз сучасного суспільства <span class="lesson-type">С</span> (18:10)</div>
                         <div class="lesson-info">
-                            <span class="lesson-type">С</span>
                             <span class="professor">Калиняк</span> • <span class="room">320</span>
                         </div>
                     </div>
@@ -281,29 +285,26 @@
                 <div class="day-name">П'ятниця</div>
                 
                 <div class="lesson-block">
-                    <div class="lesson-time">6 пара (16:40)</div>
+                    <div class="lesson-time">6</div>
                     <div class="lesson">
-                        <div class="lesson-name">Аксіологія суспільних трансформацій</div>
+                        <div class="lesson-name">Аксіологія суспільних трансформацій <span class="lesson-type">С</span> (16:40)</div>
                         <div class="lesson-info">
-                            <span class="lesson-type">С</span>
                             <span class="professor">Пачковський</span> • <span class="room">320</span>
                         </div>
                     </div>
                     <div class="lesson">
-                        <div class="lesson-name">Соціологія безпеки</div>
+                        <div class="lesson-name">Соціологія безпеки <span class="lesson-type">С</span> (16:40)</div>
                         <div class="lesson-info">
-                            <span class="lesson-type">С</span>
                             <span class="professor">Лапан</span> • <span class="room">320</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="lesson-block">
-                    <div class="lesson-time">7 пара (18:10)</div>
+                    <div class="lesson-time">7</div>
                     <div class="lesson">
-                        <div class="lesson-name">Аналітична соціологія</div>
+                        <div class="lesson-name">Аналітична соціологія <span class="lesson-type">Л/С</span> (18:10)</div>
                         <div class="lesson-info">
-                            <span class="lesson-type">Л/С</span>
                             <span class="professor">Калиняк</span> • <span class="room">320</span>
                         </div>
                     </div>
